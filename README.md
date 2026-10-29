@@ -26,3 +26,4 @@ CRUD operations: Create, Read, Update, Delete.
 ## Project Status
 
 Project status: Main and documentation merged by Abdiraman Yerasyl
+Jenkins SCM polling test - Abdiraman Yerasyl

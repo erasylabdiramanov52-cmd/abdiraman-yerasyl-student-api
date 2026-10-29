@@ -60,4 +60,11 @@ public class StudentController {
         repository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @org.springframework.web.bind.annotation.GetMapping("/search")
+    public java.util.List<Student> searchStudents(
+            @org.springframework.web.bind.annotation.RequestParam String name) {
+        return repository.findByNameContainingIgnoreCase(name);
+    }
+
 }

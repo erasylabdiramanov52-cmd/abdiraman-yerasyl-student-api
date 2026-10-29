@@ -14,3 +14,11 @@ Method: POST
 Endpoint: /api/students
 
 The API will allow creating a student with a name and email.
+
+## Student Information
+
+Name: Abdiraman Yerasyl
+Student ID: 38133
+Group: IT-2310
+
+CRUD operations: Create, Read, Update, Delete.

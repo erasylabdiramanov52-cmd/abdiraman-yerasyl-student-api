@@ -13,15 +13,29 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building Spring Boot application'
-                sh 'chmod +x gradlew && ./gradlew clean bootJar --no-daemon'
+                echo 'Building Spring Boot with Java 17'
+                sh '''
+                    docker run --rm \
+                      --user root \
+                      -v "$PWD:/workspace" \
+                      -w /workspace \
+                      gradle:9.2.1-jdk17 \
+                      bash -c "chmod +x gradlew && ./gradlew clean bootJar --no-daemon"
+                '''
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running Gradle tests'
-                sh './gradlew test --no-daemon'
+                echo 'Running tests with Java 17'
+                sh '''
+                    docker run --rm \
+                      --user root \
+                      -v "$PWD:/workspace" \
+                      -w /workspace \
+                      gradle:9.2.1-jdk17 \
+                      bash -c "./gradlew test --no-daemon"
+                '''
             }
         }
 

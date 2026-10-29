@@ -6,6 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class IntentionalFailureTest {
     @Test
     void demonstratePipelineFailure() {
-        assertTrue(false, "Intentional Jenkins failure demonstration");
+        assertTrue(true, "Intentional Jenkins failure demonstration");
     }
 }
